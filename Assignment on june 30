@@ -1,0 +1,348 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": " Assignment on june 30",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/anil5047/anil47/blob/master/Assignment%20on%20june%2030\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ElpRI6vlPQt5",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "f=open(\"file1.txt\",\"w\")\n",
+        "f.write(\"\"\"Hi\n",
+        "Hello\n",
+        "How are you?\n",
+        "Have a good day.\"\"\")\n",
+        "f.close()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "tJh4c92zP0L5",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 123
+        },
+        "outputId": "d5081554-5cc2-43e0-b954-e582b61865fb"
+      },
+      "source": [
+        "# Python program to read an entire text file.\n",
+        " \n",
+        "f = open(\"file1.txt\",\"r\")\n",
+        "content = f.read()\n",
+        "print(\"Content present in the file assignment.txt is\\n\",content)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Content present in the file assignment.txt is\n",
+            " Hi\n",
+            "Hello\n",
+            "How are you?\n",
+            "Have a good day.\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "A9Qx449vP5CE",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 157
+        },
+        "outputId": "15dab8b0-5fdc-4c27-b4a3-6fd6fb800310"
+      },
+      "source": [
+        " \n",
+        "# Python program to read first n lines of a file.\n",
+        " \n",
+        "f=open(\"file1.txt\",\"r\")\n",
+        "n=int(input(\"Enter the number of lines you want to read: \"))\n",
+        "print(\"The content present in the first\",n,\"lines present in the file is\\n:\")\n",
+        "for i in range(n):\n",
+        "    line=f.readline()\n",
+        "    print(line)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter the number of lines you want to read: 2\n",
+            "The content present in the first 2 lines present in the file is\n",
+            ":\n",
+            "Hi\n",
+            "\n",
+            "Hello\n",
+            "\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "9zKGWNVNP89B",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        },
+        "outputId": "c81e4b04-03c5-4bdf-9e18-bbc0d0929aef"
+      },
+      "source": [
+        " \n",
+        "# Python program to append text to a file and display the text.\n",
+        " \n",
+        "def file_read(fname):\n",
+        "        from itertools import islice\n",
+        "        with open(fname, \"w\") as myfile:\n",
+        "                myfile.write(\"Anil\\n\")\n",
+        "                myfile.write(\"S/O Ramanjaneyalu\")\n",
+        "        txt = open(fname)\n",
+        "        print(txt.read())\n",
+        "file_read('abc.txt')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Anil\n",
+            "S/O Ramanjaneyalu\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "hElahjTbQG3p",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 71
+        },
+        "outputId": "ef4a7745-1ea8-4e40-b1e9-1f86589f5903"
+      },
+      "source": [
+        "# Python program to read last n lines of a file.\n",
+        " \n",
+        "f=open(\"file1.txt\",\"r\")\n",
+        "n=int(input(\"Enter the value of n to print the last lines: \"))\n",
+        "last=f.readlines() [-n:]\n",
+        "for line in last:\n",
+        "    print(line, end ='')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter the value of n to print the last lines: 1\n",
+            "Have a good day."
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AbaOgH2bQTUH",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 54
+        },
+        "outputId": "8fe54ccd-ccfa-426b-811d-36408e441043"
+      },
+      "source": [
+        "# Python program to read a file line by line store it into a variable.\n",
+        " \n",
+        "def file_read(fname):\n",
+        "        with open (fname, \"r\") as myfile:\n",
+        "                data=myfile.readlines()\n",
+        "                print(data)\n",
+        "file_read('file1.txt')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['Hi\\n', 'Hello\\n', 'How are you?\\n', 'Have a good day.']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gRMJy5TVQYJC",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 54
+        },
+        "outputId": "3c100e12-1a86-49a4-ecd2-cf8dd4017225"
+      },
+      "source": [
+        "# Python program to read a file line by line and store it into a list.\n",
+        " \n",
+        "def file_read(fname):\n",
+        "        with open(fname) as f:     \n",
+        "                content_list = f.readlines()\n",
+        "                print(content_list)\n",
+        " \n",
+        "file_read('file1.txt')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['Hi\\n', 'Hello\\n', 'How are you?\\n', 'Have a good day.']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rg5IhjhMQbpW",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "b0435177-198a-4d8d-8c43-45fdef252e1c"
+      },
+      "source": [
+        "# Python program to count the number of lines in a text file.\n",
+        " \n",
+        "def file_lengthy(fname):\n",
+        "        with open(fname) as f:\n",
+        "                for i, l in enumerate(f):\n",
+        "                        pass\n",
+        "        return i + 1\n",
+        "print(\"Number of lines in the file: \",file_lengthy(\"file1.txt\"))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Number of lines in the file:  4\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_yMF_0h1QeCB",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "5b43c160-f5cc-4feb-d8aa-a79e17c1697a"
+      },
+      "source": [
+        "# Python program to get the file size of a plain file.\n",
+        "\n",
+        "def file_size(fname):\n",
+        "        import os\n",
+        "        statinfo = os.stat(fname)\n",
+        "        return statinfo.st_size\n",
+        "\n",
+        "print(\"File size in bytes of a plain file: \",file_size(\"file1.txt\"))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "File size in bytes of a plain file:  52\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mtf0GyyPQhCf",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "f0f7fcc0-bbbe-4f77-84c4-3039ef5e4ebe"
+      },
+      "source": [
+        "# Python program to copy the contents of a file to another file.\n",
+        "\n",
+        "from shutil import copyfile\n",
+        "copyfile('file1.txt', 'abc.txt')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'abc.txt'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    }
+  ]
+}
