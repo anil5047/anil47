@@ -1,0 +1,410 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Copy of Python  program(5047) ",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMviNMuxQ8i3WKWENRN7rCF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/anil5047/anil47/blob/master/Python%20program(5047)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "g8N4kWxBVZJn"
+      },
+      "source": [
+        "Find minimum  of three  numbers"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RdywPPJ2VfG-",
+        "outputId": "04ce86e7-f683-45be-c50d-5b857de1a3c6",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        " \n",
+        "a,b,c=5,7,9\n",
+        "if(a<=b and a<=c):\n",
+        "  print(a,\"is the smallest\")\n",
+        "elif(b<=a and b<=c):\n",
+        "  print(b,\"is the smallest\")\n",
+        "else:\n",
+        "  print(c,\"is the smallest\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "5 is the smallest\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "87VXh8iWVr-D"
+      },
+      "source": [
+        " Find gcd and lcd of two or three  numbers"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ymuuikLcV8yg",
+        "outputId": "275a8310-7dd0-4ef4-a3a1-c136833d7891",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        " \n",
+        "def compute_gcd(x,y):\n",
+        "  while(y):\n",
+        "    x,y=y,x%y\n",
+        "  return x\n",
+        "def compute_lcm(x,y):\n",
+        "  lcm=(x*y)//compute_gcd(x,y)\n",
+        "  return lcm\n",
+        "num1=32\n",
+        "num2=58\n",
+        "print(\"The L.C.M. is\",compute_lcm(num1,num2))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "The L.C.M. is 928\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fRmRPrQpWEu3"
+      },
+      "source": [
+        " Check whether  the given number is perfect  or not"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8MUiASTSWdD2",
+        "outputId": "b2970a7e-fbda-4da1-ffc2-28e85d1f809a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 154
+        }
+      },
+      "source": [
+        " \n",
+        "n=int(input(\"Enter any number\"))\n",
+        "sum1=0\n",
+        "for i in range(1,n):\n",
+        "  if(n%i==0):\n",
+        "    sum1=sum1+i\n",
+        "  if(sum1==n):\n",
+        "    print(\"The number is a perfect number\")\n",
+        "  else:\n",
+        "    print(\"The number is not a perfect number\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter any number8\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n",
+            "The number is not a perfect number\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IxxvJPqIWuY0"
+      },
+      "source": [
+        " print  twin primes upto specified limit"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "11ZKf2r6W93o",
+        "outputId": "5c54d89f-0a7f-47f4-f5ec-80899a92ada1",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 206
+        }
+      },
+      "source": [
+        " \n",
+        "def is_prime(n):\n",
+        "  for i in range(2,n):\n",
+        "    if n%i==0:\n",
+        "      return False\n",
+        "    return True\n",
+        "def generate_twins(start,end):\n",
+        "  for i in range(start,end):\n",
+        "    j=i+2\n",
+        "    if(is_prime(i) and is_prime(j)):\n",
+        "      print(\"{:d} and {:d}\".format(i,j))\n",
+        "generate_twins(2,25)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "3 and 5\n",
+            "5 and 7\n",
+            "7 and 9\n",
+            "9 and 11\n",
+            "11 and 13\n",
+            "13 and 15\n",
+            "15 and 17\n",
+            "17 and 19\n",
+            "19 and 21\n",
+            "21 and 23\n",
+            "23 and 25\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_W5pcdBAXR6J"
+      },
+      "source": [
+        " print the prime numbers  upto specified limit"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Sre66RwRXbmB",
+        "outputId": "e4e9eed8-d6a6-462d-ba16-5604b40613e1",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 360
+        }
+      },
+      "source": [
+        " \n",
+        "lower=2\n",
+        "upper=12\n",
+        "print(\"prime numbers between\",lower, \"and\", upper, \"are:\")\n",
+        "for num in range(lower,upper+1):\n",
+        "  if num>1:\n",
+        "    for i in range(2,num):\n",
+        "      if(num%i)==0:\n",
+        "        break\n",
+        "      else:\n",
+        "        print(num)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "prime numbers between 2 and 12 are:\n",
+            "3\n",
+            "5\n",
+            "5\n",
+            "5\n",
+            "7\n",
+            "7\n",
+            "7\n",
+            "7\n",
+            "7\n",
+            "9\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n",
+            "11\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Nr6AFJysXvJY"
+      },
+      "source": [
+        " Find the sum of digits of the numbers.Check the whether the given number is Armstrong number Or not"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "IQnAaM-3X1um",
+        "outputId": "a59da21e-684f-468f-e0d6-25561ad692b5",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        " \n",
+        "num=int(input(\"Enter a number:\"))\n",
+        "sum=0\n",
+        "temp=num\n",
+        "while temp>0:\n",
+        "  digit=temp%10\n",
+        "  sum+=digit**3\n",
+        "  temp//=10\n",
+        "if num==sum:\n",
+        "  print(num,\"is an Armstong number\")\n",
+        "else:\n",
+        "  print(num,\"is not an Armstong number\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter a number:132\n",
+            "132 is not an Armstong number\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eIp23BlOZe81"
+      },
+      "source": [
+        " Swapping  of two numbers"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "prrmpWV6Zqzv",
+        "outputId": "c21d4d9d-f7f3-4257-cf68-2bc8c6a330c5",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        " \n",
+        "x=5\n",
+        "y=9\n",
+        "temp=x\n",
+        "x=y\n",
+        "y=temp\n",
+        "print('The value of x after swapping: {}'.format(x))\n",
+        "print('The value of y after swapping: {}'.format(y))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "The value of x after swapping: 9\n",
+            "The value of y after swapping: 5\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "oucYTrciZvZ9"
+      },
+      "source": [
+        " Perform all five asthmatic operations"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JBtCoNFVZ-R8",
+        "outputId": "914de469-7e12-4e57-96aa-47f8a7bd1f0f",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 120
+        }
+      },
+      "source": [
+        " \n",
+        "num1=input('Enter first number:')\n",
+        "num2=input('Enter second number:')\n",
+        "sum =float(num1)+float(num)\n",
+        "sub =float(num1)-float(num2)\n",
+        "mul =float(num1)*float(num2)\n",
+        "div =float(num1)/float(num2)\n",
+        "print(\"The Addition of {0} and {1} is {2}\".format(num1,num2,sum))\n",
+        "print(\"The subtraction of {0} and {1} is {2}\".format(num1,num2,sub))\n",
+        "print(\"The multiplication of {0} and {1} is {2}\".format(num1,num2,mul))\n",
+        "print(\"The division of {0} and {1} is {2}\".format(num1,num2,div))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter first number:6\n",
+            "Enter second number:4\n",
+            "The Addition of 6 and 4 is 138.0\n",
+            "The subtraction of 6 and 4 is 2.0\n",
+            "The multiplication of 6 and 4 is 24.0\n",
+            "The division of 6 and 4 is 1.5\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
